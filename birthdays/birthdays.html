@@ -1,0 +1,18 @@
+<body>
+  <p id="todaysDate"></p>
+  <p id="birthdayMessage"></p>
+  <script type="text/javascript">
+    var today = new Date();
+    document.getElementById("todaysDate").innerHTML = "Today is " + today.toDateString() + ".";
+    const birthdays = {Parker: new Date("05/30/2001"), Bob: new Date ("03/17/2000"), Alice: new Date("03/17/1998")
+                       Shoshana: new Date("04/12/2007"), Declan: new Date("04/22/2009")}
+    var message = "";
+    for (person in birthdays) {
+      if ( today.getMonth() == birthdays[person].getMonth() & today.getDate() == birthdays[person].getDate() )
+      {
+          message += "Happy birthday " + person + "!<br>";
+      }
+      document.getElementById("birthdayMessage").innerHTML = message;
+    }
+  </script>
+</body>
