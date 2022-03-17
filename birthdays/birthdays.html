@@ -4,15 +4,27 @@
   <script type="text/javascript">
     var today = new Date();
     document.getElementById("todaysDate").innerHTML = "Today is " + today.toDateString() + ".";
-    const birthdays = {Parker: new Date("05/30/2001"), Bob: new Date ("03/17/2000"), Alice: new Date("03/17/1998")
-                       Shoshana: new Date("04/12/2007"), Declan: new Date("04/22/2009")}
-    var message = "";
+    const birthdays = {Parker: new Date("05/30/2001"), Bob: new Date ("03/17/2000"), Alice: new Date("03/17/1998"),
+                       Shoshana: new Date("04/12/2007"), Declan: new Date("04/22/2009"), Susie: new Date("03/17/2002")};
+    const birthdaysToday = [];
     for (person in birthdays) {
-      if ( today.getMonth() == birthdays[person].getMonth() & today.getDate() == birthdays[person].getDate() )
-      {
-          message += "Happy birthday " + person + "!<br>";
+      if ( today.getMonth() == birthdays[person].getMonth() & today.getDate() == birthdays[person].getDate() ) {
+          birthdaysToday.push(person);
       }
-      document.getElementById("birthdayMessage").innerHTML = message;
     }
+    if (birthdaysToday.length) {
+      var birthdayMessage = "Happy birthday to ";
+      for (let i = 0; i < birthdaysToday.length; i++) {
+        birthdayMessage += birthdaysToday[i];
+        switch (birthdaysToday.length - 1 - i){
+          case 0: birthdayMessage += "!"; break;
+          case 1: birthdayMessage += (birthdaysToday.length >= 3) ? ", and " : " and "; break;
+          default: birthdayMessage += ", ";
+        }
+      }
+      document.getElementById("birthdayMessage").innerHTML = birthdayMessage;
+    }
+
+
   </script>
 </body>
