@@ -24,5 +24,9 @@ function updateDate(date) {
 }
 function changeDate() {
   let date = new Date( prompt( "Enter a date", new Date().toDateString().substring(4) ) );
-  updateDate(date);
+  if (date.toString() == "Invalid Date" ) {
+    alert("Invalid Date");
+  } else {
+    updateDate(date);
+  }
 }
