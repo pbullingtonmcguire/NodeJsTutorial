@@ -1,3 +1,11 @@
+async function getJson(fileName) {
+  const response = await fetch(fileName);
+  const json = await response.json();
+  console.log(json);
+  //json = {Parker: "05/30/2001"};
+  return json;
+}
+
 function updateDate(date) {
   document.getElementById("todaysDate").innerHTML = "Today is " + date.toDateString() + ".";
   const birthdays = {Parker: new Date("05/30/2001"), Bob: new Date ("03/17/2000"), Alice: new Date("03/17/1998"),

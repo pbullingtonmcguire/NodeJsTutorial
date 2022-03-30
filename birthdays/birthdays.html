@@ -3,6 +3,11 @@
   <p id="birthdayMessage"></p>
   <script src="birthdays.js" charset="utf-8"></script>
   <script type="text/javascript">
+    birthdaysJson = getJson("~/Documents/NodeJsTutorial/birthdays/birthdays.json");
+    birthdaysJson.then(
+      function(value) {console.log("success:" + value.toString());},
+      function(error) {console.log(error);}
+    );
     updateDate(new Date());
   </script>
   <button onclick="changeDate()"> Change the date </button>
