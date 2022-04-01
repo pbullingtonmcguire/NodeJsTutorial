@@ -1,3 +1,10 @@
+birthdaysJson = getJson("birthdays.json");
+birthdaysJson.then(
+  function(value) {console.log("success:" + value.toString());},
+  function(error) {console.log(error);}
+);
+updateDate(new Date());
+
 async function getJson(fileName) {
   const response = await fetch(fileName);
   const json = await response.json();
