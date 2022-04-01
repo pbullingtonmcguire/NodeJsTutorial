@@ -1,9 +1,9 @@
 <body>
   <p id="todaysDate"></p>
   <p id="birthdayMessage"></p>
-  <script src="birthdays.js" charset="utf-8"></script>
+  <script src="/birthdays.js" charset="utf-8"></script>
   <script type="text/javascript">
-    birthdaysJson = getJson("~/Documents/NodeJsTutorial/birthdays/birthdays.json");
+    birthdaysJson = getJson("birthdays.json");
     birthdaysJson.then(
       function(value) {console.log("success:" + value.toString());},
       function(error) {console.log(error);}

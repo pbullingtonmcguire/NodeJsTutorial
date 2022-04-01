@@ -15,6 +15,9 @@ http.createServer(function (request, response) {
     } else if (pathname == "/birthdays.js") {
         script = fs.readFileSync("birthdays.js", "utf8");
         response.write(script);
+    } else if (pathname == "/birthdays.json") {
+      script = fs.readFileSync("birthdays.json", "utf8");
+      response.write(script);
     }
 
 
